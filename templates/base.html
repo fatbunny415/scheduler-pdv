@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Planeación PDV</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .turno-apertura {
+            background-color: #198754;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .turno-intermedio {
+            background-color: #0dcaf0;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .turno-cierre {
+            background-color: #dc3545;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .turno-na {
+            background-color: #6c757d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 8px;
+        }
+
+        .dia-no-operativo {
+            background-color: #e9ecef !important;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-5">
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>

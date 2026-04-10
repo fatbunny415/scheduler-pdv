@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Entornos virtuales
+venv/
+.venv/
+
+# IDEs
+.vscode/
+.idea/
+
+# Node/Frontend
+node_modules/
+dist/
+build/
+
+# Archivos de sistema
+*.log
+*.tmp
+desktop.ini

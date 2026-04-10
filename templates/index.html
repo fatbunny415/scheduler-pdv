@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="card p-4 shadow">
+    <h2 class="text-center mb-4">Planeación de Turnos</h2>
+
+    <form action="/generar" method="post">
+
+        <!-- Checkbox -->
+        <div class="form-check mb-3">
+            <input class="form-check-input" type="checkbox" id="fijo" name="fijo">
+            <label class="form-check-label" for="fijo">
+                Activar asesor fijo en apertura
+            </label>
+        </div>
+
+        <!-- Select asesor -->
+        <div class="mb-3">
+            <label class="form-label">Seleccionar asesor</label>
+            <select class="form-select" name="asesor" id="asesor">
+                <option value="">-- Seleccionar --</option>
+                <option value="Asesor 1">Asesor 1</option>
+                <option value="Asesor 2">Asesor 2</option>
+                <option value="Asesor 3">Asesor 3</option>
+            </select>
+        </div>
+
+        <div class="text-center">
+            <button class="btn btn-primary">
+                Generar Planeación
+            </button>
+        </div>
+
+    </form>
+</div>
+
+<!-- Script para UX -->
+<script>
+    const checkbox = document.getElementById("fijo");
+    const select = document.getElementById("asesor");
+
+    select.disabled = true;
+
+    checkbox.addEventListener("change", function () {
+        select.disabled = !this.checked;
+    });
+</script>
+
+{% endblock %}
