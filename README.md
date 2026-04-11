@@ -1,58 +1,61 @@
-📄 README.md
 # Sistema de Planeación de Turnos - PDV
 
 Aplicación web desarrollada en Flask que permite generar automáticamente la asignación de turnos para asesores utilizando optimización con OR-Tools.
 
 ---
 
-## 🚀 Características
+## ⚙️ Requisitos previos
 
-- Generación automática de turnos (apertura, intermedio, cierre)
-- Exclusión de domingos y festivos (Colombia)
-- Rotación inteligente de turnos
-- Opción de asesor fijo en apertura
-- Restricción de no repetición de turnos semanales
-- Interfaz web sencilla para generación de planeación
+Antes de instalar el proyecto necesitas tener instalado:
 
----
+### 🐍 Python (OBLIGATORIO)
 
-## 🧠 Tecnologías utilizadas
+Descargar Python 3.10 o superior:
 
-- Python
-- Flask
-- OR-Tools (Google Optimization)
-- Pandas
-- Holidays
+👉 https://www.python.org/downloads/
+
+Durante la instalación en Windows:
+
+✔ Marca la opción:  
+`Add Python to PATH`
 
 ---
 
-## ⚙️ Instalación
-
-1. Clonar el repositorio:
+### ✔ Verificar instalación
 
 ```bash
+python --version
+
+o en algunos sistemas:
+
+python3 --version
+📦 Instalación del proyecto
+1. Clonar el repositorio
 git clone https://github.com/fatbunny415/scheduler-pdv.git
 cd scheduler-pdv
-Crear entorno virtual:
+2. Crear entorno virtual
+Windows:
 python -m venv venv
-Activar entorno:
-
-Windows
-
+Linux / Mac:
+python3 -m venv venv
+3. Activar entorno virtual
+Windows (PowerShell):
 venv\Scripts\activate.ps1
-
-Linux / Mac
-
+Windows (CMD):
+venv\Scripts\activate.bat
+Linux / Mac:
 source venv/bin/activate
-Instalar dependencias:
+4. Instalar dependencias
 pip install -r requirements.txt
-▶️ Ejecución
+▶️ Ejecución del proyecto
 python app.py
+🌐 Acceder a la aplicación
 
-Abrir en navegador:
+Abrir en el navegador:
 
 http://127.0.0.1:5000
-🧩 Lógica del sistema
+```
+🧠 Lógica del sistema
 
 El sistema utiliza programación con restricciones (CP-SAT) para modelar el problema de asignación de turnos:
 
@@ -63,6 +66,7 @@ Se garantiza rotación de turnos
 Se evita repetición del mismo turno en semanas consecutivas
 Permite fijar un asesor en apertura
 📊 Estructura del proyecto
+```bash
 scheduler-pdv/
 │
 ├── app.py
@@ -73,13 +77,14 @@ scheduler-pdv/
 │   ├── base.html
 │   ├── index.html
 │   └── result.html
+```
+👨‍💻 Autor
 
-## 👨‍💻 Autor
+Daniel Alejandro Cardona Rico
+📧 cardonadeveloper@gmail.com
 
-**Daniel Alejandro Cardona Rico**  
-**cardonadeveloper@gmail.com**
-Desarrollador de Software (SENA)
+🎓 Desarrollador de Software (SENA)
 
-- 💼 Enfoque: Backend y optimización de procesos  
-- 🧠 Intereses: Desarrollo web, lógica de negocio, OR-Tools  
-- 📍 Colombia
+💼 Enfoque: Backend y optimización de procesos
+🧠 Intereses: Desarrollo web, lógica de negocio, OR-Tools
+📍 Colombia

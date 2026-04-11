@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from scheduler.scheduler import Scheduler
+import traceback
 
 app = Flask(__name__)
 
@@ -12,15 +13,12 @@ def index():
 @app.route("/generar", methods=["POST"])
 def generar():
     try:
-        # Leer formulario
         usar_fijo = request.form.get("fijo")
         asesor = request.form.get("asesor")
 
-        # Debug (puedes quitar luego)
         print("Checkbox:", usar_fijo)
         print("Asesor:", asesor)
 
-        # Lógica correcta
         if usar_fijo == "on" and asesor:
             scheduler = Scheduler(asesor_fijo_apertura=asesor)
         else:
@@ -29,7 +27,6 @@ def generar():
         df = scheduler.generar_planeacion()
 
         if df is None or df.empty:
-            print("No se generaron datos")
             return render_template("result.html", tabla=[])
 
         data = df.to_dict(orient="records")
@@ -37,7 +34,10 @@ def generar():
         return render_template("result.html", tabla=data)
 
     except Exception as e:
-        print(f"Error en la app: {e}")
+        print("\n[ERROR EN FLASK]")
+        print(str(e))
+        print(traceback.format_exc())  # 🔥 clave para debug real
+
         return render_template("result.html", tabla=[])
 
 
